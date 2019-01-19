@@ -43,3 +43,11 @@ This is in the REGISTERCONTROLLER
             'image' => $image_url
 
 ```
+
+
+
+
+
+```
+let a = 5;
+```
