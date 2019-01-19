@@ -1,0 +1,45 @@
+How to do it:
+In the  model of the form, add the image as fillable, the name of the image input:
+
+
+```
+    protected $fillable = [
+        'name', 'email', 'password', 'image'
+    ];
+```   
+    
+    
+```
+    function test() {
+  console.log("notice the blank line before this function?");
+}
+```
+    
+    
+Now the actual adding part:
+This is in the REGISTERCONTROLLER
+
+```
+    protected function create(array $data)
+    {
+
+        $request = request();
+
+        $image = $request->file('image');
+        $imageSavedName = time() . "." . $image->getClientOriginalExtension();
+
+        $upload_path = 'images/';
+
+        // BELOW IS FOR THE DB COLUMN VALUE
+        $image_url = $upload_path  . $imageSavedName;
+
+        $success = $image->move($upload_path, $imageSavedName);
+
+
+        return User::create([
+            'name' => $data['name'],
+            'email' => $data['email'],
+            'password' => Hash::make($data['password']),
+            'image' => $image_url
+
+```
