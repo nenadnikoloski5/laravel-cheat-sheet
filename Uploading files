@@ -8,14 +8,7 @@ In the  model of the form, add the image as fillable, the name of the image inpu
     ];
 ```   
     
-    
-```
-    function test() {
-  console.log("notice the blank line before this function?");
-}
-```
-    
-    
+          
 Now the actual adding part:
 This is in the REGISTERCONTROLLER
 
@@ -42,12 +35,4 @@ This is in the REGISTERCONTROLLER
             'password' => Hash::make($data['password']),
             'image' => $image_url
 
-```
 
-
-
-
-
-```javascript
-    let a = 5;
-```
