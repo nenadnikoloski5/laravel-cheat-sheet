@@ -48,6 +48,6 @@ This is in the REGISTERCONTROLLER
 
 
 
-```
-let a = 5;
+```javascript
+    let a = 5;
 ```
