@@ -14,6 +14,5 @@ data() {
 
 And add a hidden input field within the form and bind the csrf property to the value like this:
 
-<form id="logout-form" :action="href" method="POST" style="display: none;">
+
     <input type="hidden" name="_token" :value="csrf">
-</form>
