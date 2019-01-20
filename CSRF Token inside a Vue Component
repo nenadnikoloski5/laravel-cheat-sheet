@@ -1,0 +1,19 @@
+Add a meta tag in your head view file.
+
+<meta name="csrf-token" content="{{ csrf_token() }}">
+
+
+you could access the token using
+
+data() {
+        return {
+            csrf: document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+        }
+}
+
+
+And add a hidden input field within the form and bind the csrf property to the value like this:
+
+<form id="logout-form" :action="href" method="POST" style="display: none;">
+    <input type="hidden" name="_token" :value="csrf">
+</form>
