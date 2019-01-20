@@ -1,0 +1,26 @@
+I got the error when doing this:
+
+        $post = new Post();
+
+        $userID = Auth::user()->id;
+
+
+        $input->user_id = $userID;
+        $input->postTitle = request('postTitle');
+        $input->postDescription = request('postDescription');
+        $input->save();
+
+
+DD get me number 3 ID which is correct, but the variable Auth always gave me a problem "Creating default object from empty value".
+
+Instead I went for this syntax:
+
+        Post::create([
+            'user_id' => Auth::user()->id,
+            'postTitle' => request('postTitle'),
+            'postDescription' => request('postDescription')
+        ]);
+
+It worked but it told me to put the names into the fillable variable.
+
+After that It worked
