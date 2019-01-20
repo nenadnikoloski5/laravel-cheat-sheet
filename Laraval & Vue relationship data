@@ -1,0 +1,19 @@
+Give the usual relationship public functions 
+
+And in the controller:
+
+   $posts = Post::with('users')->get();
+    return view('welcome', ["users" => $users, 'posts' => $posts]);
+// ignore the users
+
+Then bind it to the router-view
+          <router-view :users="{{$users}}" :posts="{{$posts}}">
+
+
+In the Comp:
+        <ul>
+            <li v-for="posts in posts">{{posts}}</li>
+        </ul>
+
+
+Just giving this, it shows all posts and users.
